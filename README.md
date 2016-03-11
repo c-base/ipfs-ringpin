@@ -19,7 +19,6 @@ For reliable serving of files, it is neccesary to ensure a level of redundancy.
 
 In ringpin, each of the members of the ring follows what the other members have pinned, and also pins those.
 
-
 ## Implementation
 
 Each member node
@@ -43,4 +42,15 @@ There is no verificiation of the quality-of-service provided in this network "be
 * Allow to publish IPNS entries using public/private keypairs different from that of the node.
 Then it becomes possible to have one keypair per topic, instead of just per node.
 Useful if needing to revoke trust.
-| TODO: link ipfs issue | Workaround: use one IPFS node (possibly on same server), for each topic/trustzone.
+
+## Publishing new information
+
+To publish new pinned information to the network, you need to first add and pin it locally. Then using the hash, publish it to your IPNS entry with the `tools/publish-hash.sh` tool.
+
+Example:
+
+```
+./tools/publish-hash.sh QmRgsjHhD6WD1s43B1PU6Va9qg2TP4M6swN48Fc2DNCQTx videos/some-event
+```
+
+This will update your IPNS entry, and others can pin it either using your node identifier or that and a path.
