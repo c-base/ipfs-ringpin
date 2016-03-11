@@ -3,7 +3,7 @@
 File-sharing ring for [IPFS](https://ipfs.io/), implemented using IPNS and pinning.
 
 ## Status
-Just words
+Experimental.
 
 ## Background
 
