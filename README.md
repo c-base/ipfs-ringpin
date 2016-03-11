@@ -46,7 +46,8 @@ Useful if needing to revoke trust.
 
 ## Publishing new information
 
-To publish new pinned information to the network, you need to first add and pin it locally. Then using the hash, publish it to your IPNS entry with the `tools/publish-hash.sh` tool.
+To publish new pinned information to the network, you need to first add and pin it locally.
+Then using the hash, publish it to your IPNS entry with the `tools/publish-hash.sh` tool.
 
 Example:
 
@@ -55,6 +56,19 @@ Example:
 ```
 
 This will update your IPNS entry, and others can pin it either using your node identifier or that and a path.
+
+## Add your topic to one or more pinlists
+
+To have other nodes pin your things, you must add it to a pinlist which many nodes share.
+
+Example for the topic `/pinlist/videos`:
+
+```
+echo /ipns/$(ipfs id -f="<id>")/pinlist/videos
+```
+
+For now we have [some lists in this project](https://github.com/c-base/ipfs-ringpin/tree/master/lists).
+You may submit [pull requests](https://github.com/c-base/ipfs-ringpin/pulls) against this repo.
 
 ## Keeping your IPNS entry alive
 
@@ -66,9 +80,11 @@ By default IPNS entries expire every 24h. To refresh yours, run this from cron:
 
 ## Updating pins
 
-To update what your node has pinned to match that specify by other nodes
+To update what your node has pinned to match that specify by other nodes.
 
 
 ```
 ./tools/pin-list.sh lists/mylist.pinlist
 ```
+
+The list can be one of the [lists in this project](https://github.com/c-base/ipfs-ringpin/tree/master/lists).
