@@ -54,3 +54,11 @@ Example:
 ```
 
 This will update your IPNS entry, and others can pin it either using your node identifier or that and a path.
+
+## Keeping your IPNS entry alive
+
+By default IPNS entries expire every 24h. To refresh yours, run this from cron:
+
+```
+./tools/publish-ipns.sh
+```
