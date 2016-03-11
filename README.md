@@ -50,7 +50,7 @@ To publish new pinned information to the network, you need to first add and pin 
 Example:
 
 ```
-./tools/publish-hash.sh QmRgsjHhD6WD1s43B1PU6Va9qg2TP4M6swN48Fc2DNCQTx videos/some-event
+./tools/publish-hash.sh QmRgsjHhD6WD1s43B1PU6Va9qg2TP4M6swN48Fc2DNCQTx pinlist/videos/some-event
 ```
 
 This will update your IPNS entry, and others can pin it either using your node identifier or that and a path.
