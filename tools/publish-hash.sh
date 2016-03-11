@@ -12,6 +12,6 @@ TARGET_PATH=$2
 
 # Show the operation we're doing
 echo "Adding IPFS hash ${INPUT_HASH} as ${TARGET_PATH}"
-NEW_ROOT_HASH=$(ipfs object patch $ROOT_HASH add-link $TARGET_PATH $INPUT_HASH)
+NEW_ROOT_HASH=$(ipfs object patch $ROOT_HASH add-link -p $TARGET_PATH $INPUT_HASH)
 echo "New root hash is ${NEW_ROOT_HASH}"
 ipfs name publish $NEW_ROOT_HASH
