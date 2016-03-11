@@ -43,6 +43,7 @@ There is no verificiation of the quality-of-service provided in this network "be
 Then it becomes possible to have one keypair per topic, instead of just per node.
 Useful if needing to revoke trust.
 
+
 ## Publishing new information
 
 To publish new pinned information to the network, you need to first add and pin it locally. Then using the hash, publish it to your IPNS entry with the `tools/publish-hash.sh` tool.
@@ -61,4 +62,13 @@ By default IPNS entries expire every 24h. To refresh yours, run this from cron:
 
 ```
 ./tools/publish-ipns.sh
+```
+
+## Updating pins
+
+To update what your node has pinned to match that specify by other nodes
+
+
+```
+./tools/pin-list.sh lists/mylist.pinlist
 ```
