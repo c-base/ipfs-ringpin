@@ -43,6 +43,15 @@ There is no verificiation of the quality-of-service provided in this network "be
 Then it becomes possible to have one keypair per topic, instead of just per node.
 Useful if needing to revoke trust.
 
+## Initialization
+
+You need to have prepared an IPNS entry for your node before running these tools. If you haven't done so earlier, it is possible to get it going by running:
+
+```
+ipfs name publish QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn
+```
+
+This will post an entry containing an empty directory, which can then be amended with real contents.
 
 ## Publishing new information
 
